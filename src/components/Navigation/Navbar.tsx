@@ -1,65 +1,65 @@
 import React from 'react';
 import Logo from '../../assets/aktechtbg.webp';
+import { NavbarItems } from '../../types';
 
 const Navbar: React.FC = () => {
+  const navItems: NavbarItems[] = [
+    {
+      id: 1,
+      item: 'Home',
+    },
+    {
+      id: 2,
+      item: 'Book',
+    },
+    {
+      id: 3,
+      item: 'Packages',
+    },
+    {
+      id: 4,
+      item: 'Services',
+    },
+    {
+      id: 5,
+      item: 'Gallery',
+    },
+    {
+      id: 6,
+      item: 'About',
+    },
+  ];
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-      <div className="flex flex-wrap items-center gap-2 mx-auto p-4">
+    <nav className="bg-amber-300 border-gray-200">
+      <div className="flex flex-wrap items-center gap-2 mx-auto p-2">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src={Logo} className="h-8" alt="AK Logo" />
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">AK Travels</span>
+          <span className="self-center text-xl font-semibold whitespace-nowrap">AK Travels</span>
         </a>
-        <div className="hidden w-full md:block md:w-auto pl-8" id="navbar-dropdown">
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Book
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Packages
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Gallery
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                About
-              </a>
-            </li>
+        <div className="block w-auto pl-8" id="navbar-dropdown">
+          <ul className="flex font-medium p-0 border-gray-100 rounded-lg space-x-6 rtl:space-x-reverse flex-row mt-0 border-0">
+            {navItems.map((navItem) => (
+              <li key={navItem.id}>
+                <a href="#" className="block text-gray-900 rounded-sm border-0 hover:text-red-700 p-0">
+                  {navItem.item}
+                </a>
+              </li>
+            ))}
           </ul>
+        </div>
+        <div className="flex flex-row gap-6 ml-auto mr-6">
+          <button
+            type="button"
+            className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          >
+            Register
+          </button>
         </div>
       </div>
     </nav>
