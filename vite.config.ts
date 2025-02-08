@@ -15,4 +15,5 @@ export default defineConfig({
     },
   },
   plugins: [react(), tailwindcss()],
+  base: '/jain-online-fe-project',
 });
