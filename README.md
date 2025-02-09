@@ -1,4 +1,4 @@
-# Jain Online - Frontend Development project
+# Jain Online: Frontend Development project || [Live Link](https://aktech27.github.io/jain-online-fe-project)
 
 The front-end development project involves the development of web applications following four checkpoints through out the course.
 
