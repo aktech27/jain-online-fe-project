@@ -1,20 +1,32 @@
 @import "tailwindcss";
 
 .text-in {
-  animation: text-in 1050ms ease-in-out 0s infinite alternate;
+  animation: text-in 2750ms ease-in-out 0s infinite;
 }
 
 @keyframes text-in {
+
   0% {
     letter-spacing: -0.75em;
     opacity: 0;
   }
 
-  40% {
+  10% {
     opacity: 0.6;
   }
 
-  100% {
+  20% {
     opacity: 1;
+    letter-spacing: 0.05em;
+  }
+
+  90% {
+    opacity: 0.85;
+    letter-spacing: 0.05em;
+  }
+
+  100% {
+    letter-spacing: -0.75em;
+    opacity: 0;
   }
 }

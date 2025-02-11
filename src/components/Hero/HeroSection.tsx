@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react';
 import BgImage from '../../assets/travel-bg.webp';
 
-const countries = ['India', 'United States', 'France', 'Germany', 'Dubai'];
+const countries = ['India', 'United States', 'France', 'Germany', 'Dubai'] as const;
 
 const HeroSection = () => {
-  const [currentCountry, setCurrentCountry] = useState(countries[0]);
+  const [currentCountry, setCurrentCountry] = useState<(typeof countries)[number]>(countries[0]);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const timeout = setTimeout(() => {
       setIndex((prevIndex) => (prevIndex + 1) % countries.length);
-    }, 2000);
+    }, 2750);
 
-    return () => clearInterval(intervalId);
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [currentCountry]);
 
   useEffect(() => {
-    console.log(index);
     setCurrentCountry(countries[index]);
   }, [index]);
 
