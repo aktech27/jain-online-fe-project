@@ -59,14 +59,14 @@ const Navbar: React.FC = () => {
           <ul className="flex items-center font-medium p-0 border-gray-100 rounded-lg space-x-6 rtl:space-x-reverse flex-row mt-0 border-0">
             {navItems.map((navItem) => (
               <li key={navItem.id} className={`relative flex items-center h-[60px] m-0 ${navItem.hasDropdown ? 'group' : ''}`}>
-                <a href="#" className="flex items-center rounded-sm border-0 hover:text-blue-500 p-6 h-[50%] hover:bg-black/40">
+                <a href="#" className="flex items-center transition-all duration-300 rounded-sm border-0 hover:text-blue-500 p-6 h-[50%] hover:bg-black/40 hover:scale-115">
                   {navItem.item}
                 </a>
                 {navItem.hasDropdown && (
-                  <div className="hidden group-hover:block hover:block absolute top-15 rounded w-50 bg-black/40">
+                  <div className="hidden group-hover:block hover:block absolute top-15 rounded w-50 bg-black/40 overflow-hidden">
                     <ul className="cursor-pointer">
                       {navItem.subNavItems!.map((subNavItem) => (
-                        <li key={subNavItem.id} className="p-4 rounded hover:text-blue-500 hover:bg-black/40">
+                        <li key={subNavItem.id} className="p-4 rounded transition-all duration-300 hover:text-blue-500 hover:bg-black/40 hover:scale-110">
                           {subNavItem.item}
                         </li>
                       ))}
@@ -80,13 +80,13 @@ const Navbar: React.FC = () => {
         <div className="flex flex-row gap-6 ml-auto mr-6">
           <button
             type="button"
-            className="w-30 text-blue-700 bg-gradient-to-r from-slate-50 to-blue-200 hover:bg-gradient-to-br focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer"
+            className="w-30 transition-all duration-300 text-blue-700 bg-gradient-to-r from-slate-50 to-blue-200 hover:bg-gradient-to-bl hover:scale-105 focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer"
           >
             Register
           </button>
           <button
             type="button"
-            className="w-30 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer"
+            className="w-30 transition-all duration-300 text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 hover:bg-gradient-to-bl hover:scale-105 focus:ring-3 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer"
           >
             Login
           </button>
