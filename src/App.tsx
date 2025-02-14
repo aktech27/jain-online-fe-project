@@ -1,7 +1,10 @@
+import { Navbar, HeroSection } from './components';
+
 const App = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold">Hello, World!</h1>
+      <Navbar />
+      <HeroSection />
     </>
   );
 };

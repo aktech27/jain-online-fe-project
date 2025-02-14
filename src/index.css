@@ -1,1 +1,47 @@
 @import "tailwindcss";
+
+nav,
+button {
+  font-family: "JetBrains Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h3,
+h1 {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.text-in {
+  animation: text-in 2750ms ease-in-out 0s infinite;
+}
+
+@keyframes text-in {
+
+  0% {
+    letter-spacing: -0.75em;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  20% {
+    opacity: 1;
+    letter-spacing: 0.05em;
+  }
+
+  90% {
+    opacity: 0.85;
+    letter-spacing: 0.05em;
+  }
+
+  100% {
+    letter-spacing: -0.75em;
+    opacity: 0;
+  }
+}
