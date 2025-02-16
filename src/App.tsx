@@ -1,10 +1,11 @@
-import { Navbar, HeroSection } from './components';
+import { Navbar, HeroSection, BookNow } from './components';
 
 const App = () => {
   return (
     <>
       <Navbar />
       <HeroSection />
+      <BookNow />
     </>
   );
 };
