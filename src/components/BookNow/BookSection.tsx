@@ -1,4 +1,5 @@
 import BgImage from '../../assets/travel-bg.webp';
+import BookNowForm from './BookNowForm';
 
 const BookSection = () => {
   return (
@@ -12,12 +13,7 @@ const BookSection = () => {
       </div>
       <div className="w-[50%] h-full p-3 flex items-center">
       <div className="w-[75%] mx-auto h-[750px] overflow-hidden">
-          <form className='w-full'>
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-          </form>
+          <BookNowForm/>
         </div>
       </div>
       </div>
