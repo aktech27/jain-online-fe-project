@@ -4,3 +4,13 @@ export interface NavbarItems {
   hasDropdown?: boolean;
   subNavItems?: NavbarItems[];
 }
+
+export interface BookNowFormItems{
+  destination: string;
+  personCount: number;
+  startDate: string;
+  endDate: string;
+  description: string;
+}
+
+export type BookNowFormKeys = keyof BookNowFormItems;

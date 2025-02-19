@@ -1,23 +1,28 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { BookNowFormItems, BookNowFormKeys } from '../../types';
 
 const BookNowForm = () => {
-  const [whereTo, setWhereTo] = useState('');
-  const [howManyPersons, setHowManyPersons] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [description, setDescription] = useState('');
-
-
   const places = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'];
+  const defaultFormState: BookNowFormItems = {
+    destination: '',
+    personCount: 0,
+    startDate: '',
+    endDate: '',
+    description: '',
+  };
+
+  const [formState, setFormState] = useState<BookNowFormItems>(defaultFormState);
+
+  const handleChange = (field: BookNowFormKeys, value: string | number) => {
+    setFormState((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
 
   const handleSubmit = () => {
-    alert('Booking successful!');
-    // Reset form
-    setWhereTo('');
-    setHowManyPersons('');
-    setStartDate('');
-    setEndDate('');
-    setDescription('');
+    console.log(formState);
+    setFormState(defaultFormState);
   };
 
   return (
@@ -26,11 +31,7 @@ const BookNowForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-sm font-medium mb-1">Where to</label>
-          <select
-            value={whereTo}
-            onChange={(e) => setWhereTo(e.target.value)}
-            className="w-full border rounded p-2"
-          >
+          <select value={formState.destination} onChange={(e) => handleChange('destination', e.target.value)} className="w-full border rounded p-2">
             <option value="">Select a place</option>
             {places.map((place) => (
               <option key={place} value={place}>
@@ -42,22 +43,15 @@ const BookNowForm = () => {
 
         <div className="mb-4">
           <label className="block text-sm font-medium mb-1">How Many Persons</label>
-          <input
-            type="number"
-            value={howManyPersons}
-            onChange={(e) => setHowManyPersons(e.target.value)}
-            className="w-full border rounded p-2"
-            min="1"
-            required
-          />
+          <input type="number" value={formState.personCount} onChange={(e) => handleChange('personCount', e.target.value)} className="w-full border rounded p-2" min="1" required />
         </div>
 
         <div className="mb-4">
           <label className="block text-sm font-medium mb-1">Start Date</label>
           <input
             type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
+            value={formState.startDate}
+            onChange={(e) => handleChange('startDate', e.target.value)}
             className="w-full border rounded p-2"
             min={new Date().toISOString().split('T')[0]} // Set minimum to today
             required
@@ -68,30 +62,20 @@ const BookNowForm = () => {
           <label className="block text-sm font-medium mb-1">End Date</label>
           <input
             type="date"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
+            value={formState.endDate}
+            onChange={(e) => handleChange('endDate', e.target.value)}
             className="w-full border rounded p-2"
-            min={startDate} // Set minimum to start date
+            min={formState.startDate ?? new Date().toISOString().split('T')[0]} // Set minimum to start date
             required
           />
         </div>
 
         <div className="mb-4">
           <label className="block text-sm font-medium mb-1">Description</label>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="w-full border rounded p-2"
-            minLength={50}
-            maxLength={500}
-            required
-          />
+          <textarea value={formState.description} onChange={(e) => handleChange('description', e.target.value)} className="w-full border rounded p-2" minLength={50} maxLength={500} required />
         </div>
 
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white rounded p-2 hover:bg-blue-600"
-        >
+        <button type="submit" className="w-full bg-blue-500 text-white rounded p-2 hover:bg-blue-600">
           Book Now
         </button>
       </form>
