@@ -5,7 +5,7 @@ export interface NavbarItems {
   subNavItems?: NavbarItems[];
 }
 
-export interface BookNowFormItems{
+export interface BookNowFormItems {
   destination: string;
   personCount: number;
   startDate: string;
@@ -14,3 +14,5 @@ export interface BookNowFormItems{
 }
 
 export type BookNowFormKeys = keyof BookNowFormItems;
+
+export type BookNowFormErrors = Omit<BookNowFormItems, 'personCount'> & { personCount: string };
