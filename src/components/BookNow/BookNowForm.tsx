@@ -12,20 +12,57 @@ const BookNowForm = () => {
   };
   const defaultFormErrors: BookNowFormErrors = {
     destination: '',
-    personCount: 'Error Sample',
-    startDate: 'Error Sample',
-    endDate: 'Error Sample',
-    description: 'Error Sample',
+    personCount: '',
+    startDate: '',
+    endDate: '',
+    description: '',
   };
 
   const [formState, setFormState] = useState<BookNowFormItems>(defaultFormState);
   const [formErrors, setFormErrors] = useState<BookNowFormErrors>(defaultFormErrors);
+
+  const handleValidation = (field: BookNowFormKeys, value: string | number) => {
+    switch (field) {
+      case 'destination':
+        if (!value) {
+          setFormErrors((prev) => ({ ...prev, destination: 'Please select a destination' }));
+        } else {
+          setFormErrors((prev) => ({ ...prev, destination: '' }));
+        }
+        break;
+      case 'personCount':
+        if ((value as number) == 0) {
+          setFormErrors((prev) => ({ ...prev, personCount: 'Minimum of 1 person is required' }));
+        } else if ((value as number) < 0) {
+          setFormErrors((prev) => ({ ...prev, personCount: 'Number of persons cannot be negative' }));
+        } else if ((value as number) > 500) {
+          setFormErrors((prev) => ({ ...prev, personCount: 'Number of persons too large' }));
+        } else {
+          setFormErrors((prev) => ({ ...prev, personCount: '' }));
+        }
+        break;
+      case 'description':
+        if (!value) {
+          setFormErrors((prev) => ({ ...prev, description: 'Please give a description' }));
+        } else if ((value as string).length < 50) {
+          setFormErrors((prev) => ({ ...prev, description: 'Description too short' }));
+        } else if ((value as string).length > 500) {
+          setFormErrors((prev) => ({ ...prev, description: 'Description too long' }));
+        } else {
+          setFormErrors((prev) => ({ ...prev, description: '' }));
+        }
+        break;
+      default:
+        break;
+    }
+  };
 
   const handleChange = (field: BookNowFormKeys, value: string | number) => {
     setFormState((prev) => ({
       ...prev,
       [field]: value,
     }));
+    handleValidation(field, value);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -89,11 +126,19 @@ const BookNowForm = () => {
 
         <div className="mb-4">
           <label className="block text-2sm font-medium mb-1">Description</label>
-          <textarea value={formState.description} onChange={(e) => handleChange('description', e.target.value)} className="w-full border rounded p-2" minLength={50} maxLength={500} required />
+          <textarea
+            value={formState.description}
+            onChange={(e) => handleChange('description', e.target.value)}
+            className="w-full border rounded p-2"
+            minLength={50}
+            maxLength={500}
+            required
+            rows={4}
+          />
           <div className="text-sm ml-2 text-red-600 h-[15px]">{formErrors.description}</div>
         </div>
 
-        <button type="submit" className="w-full bg-blue-500 text-white rounded p-2 hover:bg-blue-600">
+        <button type="submit" className="w-full bg-blue-500 text-white rounded p-2 hover:bg-blue-600 cursor-pointer">
           Book Now
         </button>
       </form>
