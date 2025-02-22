@@ -16,3 +16,6 @@ export interface BookNowFormItems {
 export type BookNowFormKeys = keyof BookNowFormItems;
 
 export type BookNowFormErrors = Omit<BookNowFormItems, 'personCount'> & { personCount: string };
+export interface SuccessPopUpPropTypes {
+  closePopUp: () => void;
+}

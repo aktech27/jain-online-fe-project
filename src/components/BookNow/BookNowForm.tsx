@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BookNowFormErrors, BookNowFormItems, BookNowFormKeys } from '../../types';
 import { calculateDaysBetween, checkIfDateIsToday, checkIfPastDate } from '../../utils/dateFunctions';
+import SuccessPopUp from './SuccessPopUp';
 
 const BookNowForm = () => {
   const places = ['India', 'United States', 'France', 'Germany', 'Dubai'];
@@ -21,8 +22,19 @@ const BookNowForm = () => {
 
   const [formState, setFormState] = useState<BookNowFormItems>(defaultFormState);
   const [formErrors, setFormErrors] = useState<BookNowFormErrors>(defaultFormErrors);
+  const [showPopUp, setShowPopUp] = useState<boolean>(false);
 
   const formRef = useRef<HTMLFormElement | null>(null);
+
+  useEffect(() => {
+    if (showPopUp) {
+      document.querySelector('body')!.style.height = '100%';
+      document.querySelector('body')!.style.overflow = 'hidden';
+    } else {
+      document.querySelector('body')!.style.height = '';
+      document.querySelector('body')!.style.overflow = '';
+    }
+  }, [showPopUp]);
 
   const handleValidation = (field: BookNowFormKeys, value: string | number) => {
     switch (field) {
@@ -102,12 +114,17 @@ const BookNowForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setShowPopUp(true);
     const isValid = Object.values(formErrors).every((value) => value == '');
     if (isValid) {
       window.alert('Booking Successfull');
       setFormState(defaultFormState);
       setFormErrors(defaultFormErrors);
     }
+  };
+
+  const closePopUp = () => {
+    setShowPopUp(false);
   };
 
   return (
@@ -184,6 +201,7 @@ const BookNowForm = () => {
           Book Now
         </button>
       </form>
+      {showPopUp ? <SuccessPopUp closePopUp={closePopUp} /> : null}
     </div>
   );
 };
