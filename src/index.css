@@ -8,6 +8,10 @@ button {
   font-style: normal;
 }
 
+body {
+  font-family: "JetBrains Mono", serif;
+}
+
 h3,
 h1 {
   font-family: "Poppins", serif;
