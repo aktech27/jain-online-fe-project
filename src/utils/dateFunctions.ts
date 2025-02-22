@@ -12,13 +12,12 @@ export const checkIfDateIsToday = (dateString: string): boolean => {
 };
 
 export const checkIfPastDate = (dateString: string): boolean => {
-  const [year, month, date] = dateString.split('-');
   const current = {
     year: new Date(Date.now()).getFullYear(),
-    month: new Date(Date.now()).getMonth() + 1,
+    month: new Date(Date.now()).getMonth(),
     date: new Date(Date.now()).getDate(),
   };
-  if (Number.parseInt(year) == current.year && Number.parseInt(month) == current.month && Number.parseInt(date) == current.date) {
+  if (new Date(current.year, current.month, current.date).getTime() > new Date(dateString).getTime()) {
     return true;
   }
   return false;
