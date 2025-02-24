@@ -1,4 +1,4 @@
-import { Navbar, HeroSection, BookNow } from './components';
+import { Navbar, HeroSection, BookNow, Packages } from './components';
 
 const App = () => {
   return (
@@ -6,6 +6,7 @@ const App = () => {
       <Navbar />
       <HeroSection />
       <BookNow />
+      <Packages />
     </>
   );
 };
