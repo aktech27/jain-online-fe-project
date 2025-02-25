@@ -19,3 +19,11 @@ export type BookNowFormErrors = Omit<BookNowFormItems, 'personCount'> & { person
 export interface SuccessPopUpPropTypes {
   closePopUp: () => void;
 }
+
+export interface PackageCardProps {
+  image: string;
+  name: string;
+  description: string;
+  price: number;
+  rating: number;
+}
