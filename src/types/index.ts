@@ -27,3 +27,8 @@ export interface PackageCardProps {
   price: number;
   rating: number;
 }
+
+export interface ServiceCarouselProps {
+  name: string;
+  description: string;
+}

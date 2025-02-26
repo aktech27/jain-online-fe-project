@@ -1,3 +1,5 @@
+import ServiceCarousel from './ServiceCarousel';
+
 const serviceItems = [
   {
     id: 1,
@@ -35,12 +37,7 @@ const Services = () => {
   return (
     <section id="booknow" className="h-screen py-6">
       <h3 className="text-center text-5xl">Our Services</h3>
-      {serviceItems.map((item) => (
-        <div key={item.id}>
-          <div>{item.name}</div>
-          <div>{item.description}</div>
-        </div>
-      ))}
+      <ServiceCarousel />
     </section>
   );
 };
