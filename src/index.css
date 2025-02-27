@@ -23,6 +23,14 @@ h1 {
   animation: text-in 2750ms ease-in-out 0s infinite;
 }
 
+.form-gradient {
+  background-image: linear-gradient(135deg, transparent 0%, transparent 2%, rgba(209, 255, 168, 0.6) 2%, rgba(209, 255, 168, 0.6) 21%, transparent 21%, transparent 85%, rgba(213, 250, 34, 0.6) 85%, rgba(213, 250, 34, 0.6) 100%), linear-gradient(45deg, transparent 0%, transparent 18%, rgb(224, 238, 255) 18%, rgb(224, 238, 255) 31%, rgb(255, 252, 231) 31%, rgb(255, 252, 231) 44%, transparent 44%, transparent 93%, rgb(173, 246, 53) 93%, rgb(173, 246, 53) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+.book-section-gradient {
+  background-image: radial-gradient(circle at 29% 55%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 4%, transparent 4%, transparent 44%, transparent 44%, transparent 100%), radial-gradient(circle at 85% 89%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 51%, transparent 51%, transparent 52%, transparent 52%, transparent 100%), radial-gradient(circle at 6% 90%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 53%, transparent 53%, transparent 64%, transparent 64%, transparent 100%), radial-gradient(circle at 35% 75%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 6%, transparent 6%, transparent 98%, transparent 98%, transparent 100%), radial-gradient(circle at 56% 75%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 16%, transparent 16%, transparent 23%, transparent 23%, transparent 100%), radial-gradient(circle at 42% 0%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 3%, transparent 3%, transparent 26%, transparent 26%, transparent 100%), radial-gradient(circle at 29% 28%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 51%, transparent 51%, transparent 75%, transparent 75%, transparent 100%), radial-gradient(circle at 77% 21%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 35%, transparent 35%, transparent 55%, transparent 55%, transparent 100%), radial-gradient(circle at 65% 91%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 46%, transparent 46%, transparent 76%, transparent 76%, transparent 100%), linear-gradient(45deg, rgb(0, 11, 255), rgb(218, 192, 255));
+}
+
 @keyframes text-in {
 
   0% {

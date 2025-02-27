@@ -128,7 +128,7 @@ const BookNowForm = () => {
   };
 
   return (
-    <div className="w-[90%] mx-auto p-4 border rounded shadow-lg">
+    <div className="w-[90%] mx-auto p-4 border rounded shadow-2xl form-gradient">
       <h5 className="text-3xl font-bold mb-1 text-center">Explore Your Adventure</h5>
       <h6 className="text-3md font-semibold text-center text-slate-700 mb-4">Start your dream trip now with just a few clicks!</h6>
       <form ref={formRef} onSubmit={handleSubmit}>
