@@ -1,5 +1,3 @@
-import { ServiceCarouselProps } from '../../types';
-
 const ServiceCarousel = () => {
   return (
     <div className="relative flex gap-4 overflow-x-hidden bg-yellow-200 py-4 mx-auto w-[90vw]">

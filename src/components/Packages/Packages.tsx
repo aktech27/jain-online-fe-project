@@ -1,10 +1,18 @@
 import PackageCard from './PackageCard';
-import Image from '../../assets/travel-bg.webp';
+import Image1 from '../../assets/places/bali.jpg';
+import Image2 from '../../assets/places/france.jpg';
+import Image3 from '../../assets/places/kenya.jpg';
+import Image4 from '../../assets/places/tokyo.jpg';
+import Image5 from '../../assets/places/cairo.jpg';
+import Image6 from '../../assets/places/coast.webp';
+import Image7 from '../../assets/places/newyork.jpg';
+import Image8 from '../../assets/places/australia.jpg';
+import Image9 from '../../assets/places/greece.jpg';
 
 const packageItems = [
   {
     id: 1,
-    image: Image,
+    image: Image1,
     placeName: 'Bali, Indonesia',
     description: 'Experience the stunning beaches, vibrant culture, and lush rice terraces.',
     price: 1200,
@@ -12,7 +20,7 @@ const packageItems = [
   },
   {
     id: 2,
-    image: Image,
+    image: Image2,
     placeName: 'Paris, France',
     description: 'Discover the romance of Paris with visits to the Eiffel Tower, Louvre Museum, and charming places.',
     price: 1500,
@@ -20,7 +28,7 @@ const packageItems = [
   },
   {
     id: 3,
-    image: Image,
+    image: Image3,
     placeName: 'Maasai Mara, Kenya',
     description: 'Embark on an unforgettable safari experience and immerse yourself in the rich Maasai culture.',
     price: 2000,
@@ -28,7 +36,7 @@ const packageItems = [
   },
   {
     id: 4,
-    image: Image,
+    image: Image4,
     placeName: 'Tokyo, Japan',
     description: 'Explore the bustling streets of Shibuya, visit historic temples, and enjoy world-class sushi.',
     price: 1800,
@@ -36,7 +44,7 @@ const packageItems = [
   },
   {
     id: 5,
-    image: Image,
+    image: Image5,
     placeName: 'Cairo, Egypt',
     description: 'Discover the ancient pyramids of Giza, the Sphinx, and the treasures of the Egyptian Museum.',
     price: 1600,
@@ -44,7 +52,7 @@ const packageItems = [
   },
   {
     id: 6,
-    image: Image,
+    image: Image6,
     placeName: 'Amalfi Coast, Italy',
     description: 'Enjoy breathtaking coastal views, visit picturesque towns and savor authentic Italian cuisine.',
     price: 2200,
@@ -52,7 +60,7 @@ const packageItems = [
   },
   {
     id: 7,
-    image: Image,
+    image: Image7,
     placeName: 'New York City, USA',
     description: 'Experience the vibrant energy of NYC. Visit Times Square, Central Park, and the Statue of Liberty.',
     price: 1400,
@@ -60,15 +68,15 @@ const packageItems = [
   },
   {
     id: 8,
-    image: Image,
-    placeName: 'Great Barrier Reef, Australia',
+    image: Image8,
+    placeName: 'Great Barrier, Australia',
     description: "Dive into the world's largest coral reef system with colorful marine life.",
     price: 2500,
     rating: 5,
   },
   {
     id: 9,
-    image: Image,
+    image: Image9,
     placeName: 'Santorini, Greece',
     description: 'Experience the iconic sunsets, white-washed buildings, and crystal-clear waters.',
     price: 1800,

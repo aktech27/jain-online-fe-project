@@ -5,7 +5,7 @@ const PackageCard = ({ image, name, description, price, rating }: PackageCardPro
     <div className="h-[550px] flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-105">
       <div className="bg-white shadow-2xl rounded-2xl flex flex-col overflow-hidden h-[90%] w-[85%] hover:shadow-3xl">
         <div className="w-full h-[50%]">
-          <img src={image} alt={`img-${name}`} className="object-cover h-full" />
+          <img src={image} alt={`img-${name}`} className="object-cover h-full w-full" />
         </div>
         <div className="px-4 py-2">
           <div className="text-2xl font-bold mt-2">{name}</div>
