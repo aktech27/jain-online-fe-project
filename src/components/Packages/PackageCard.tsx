@@ -1,18 +1,23 @@
 import { PackageCardProps } from '../../types';
+import Stars from '../../assets/star-four.svg';
+import Stars2 from '../../assets/star-five.svg';
 
 const PackageCard = ({ image, name, description, price, rating }: PackageCardProps) => {
   return (
     <div className="h-[550px] flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-105">
-      <div className="bg-white shadow-2xl rounded-2xl flex flex-col overflow-hidden h-[90%] w-[85%] hover:shadow-3xl">
+      <div className="bg-white shadow-2xl rounded-2xl flex flex-col overflow-hidden h-[100%] w-[85%] hover:shadow-3xl">
         <div className="w-full h-[50%]">
           <img src={image} alt={`img-${name}`} className="object-cover h-full w-full" />
         </div>
         <div className="px-4 py-2">
           <div className="text-2xl font-bold mt-2">{name}</div>
           <div className="text-xs text-gray-500 mb-2">{description}</div>
-          <div className="flex text-sm border-yellow-700 bg-yellow-500 border-1 rounded-lg w-fit pl-1 my-2">
-            <div className="p-2 text-white mr-2">Rating</div>
-            <div className="bg-yellow-200 text-yellow-700 p-2 rounded-lg w-fit font-bold">{rating.toFixed(1)}</div>
+          <div className="flex gap-4 items-center">
+            <div className="flex text-sm border-yellow-700 bg-yellow-500 border-1 rounded-lg w-fit pl-1 my-2">
+              <div className="p-2 text-white mr-2">Rating</div>
+              <div className="bg-yellow-200 text-yellow-700 p-2 rounded-lg w-fit font-bold">{rating.toFixed(1)}</div>
+            </div>
+            <span className="w-[100px]">{rating == 4 ? <img src={Stars} alt="4star" /> : <img src={Stars2} alt="4star" />}</span>
           </div>
           <div className="flex border-green-700 bg-green-500 border-1 rounded-lg w-fit pl-2 my-4">
             <div className="p-2 text-white mr-2">Price</div>
