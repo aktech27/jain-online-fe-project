@@ -28,7 +28,13 @@ export interface PackageCardProps {
   rating: number;
 }
 
-export interface ServiceCarouselProps {
+export interface ServiceCardItems {
+  id: number;
   name: string;
   description: string;
+  image: string;
+}
+
+export interface ServiceCarouselProps {
+  items: ServiceCardItems[];
 }

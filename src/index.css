@@ -24,11 +24,29 @@ h1 {
 }
 
 .form-gradient {
-  background-image: linear-gradient(135deg, transparent 0%, transparent 2%, rgba(209, 255, 168, 0.6) 2%, rgba(209, 255, 168, 0.6) 21%, transparent 21%, transparent 85%, rgba(213, 250, 34, 0.6) 85%, rgba(213, 250, 34, 0.6) 100%), linear-gradient(45deg, transparent 0%, transparent 18%, rgb(224, 238, 255) 18%, rgb(224, 238, 255) 31%, rgb(255, 252, 231) 31%, rgb(255, 252, 231) 44%, transparent 44%, transparent 93%, rgb(173, 246, 53) 93%, rgb(173, 246, 53) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+  background-image: linear-gradient(135deg, transparent 0%, transparent 2%, rgba(209, 255, 168, 0.6) 2%, rgba(209, 255, 168, 0.6) 21%, transparent 21%, transparent 85%, rgba(213, 250, 34, 0.6) 85%, rgba(213, 250, 34, 0.6) 100%),
+    linear-gradient(45deg, transparent 0%, transparent 18%, rgb(224, 238, 255) 18%, rgb(224, 238, 255) 31%, rgb(255, 252, 231) 31%, rgb(255, 252, 231) 44%, transparent 44%, transparent 93%, rgb(173, 246, 53) 93%, rgb(173, 246, 53) 100%),
+    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
 }
 
 .book-section-gradient {
-  background-image: radial-gradient(circle at 29% 55%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 4%, transparent 4%, transparent 44%, transparent 44%, transparent 100%), radial-gradient(circle at 85% 89%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 51%, transparent 51%, transparent 52%, transparent 52%, transparent 100%), radial-gradient(circle at 6% 90%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 53%, transparent 53%, transparent 64%, transparent 64%, transparent 100%), radial-gradient(circle at 35% 75%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 6%, transparent 6%, transparent 98%, transparent 98%, transparent 100%), radial-gradient(circle at 56% 75%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 16%, transparent 16%, transparent 23%, transparent 23%, transparent 100%), radial-gradient(circle at 42% 0%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 3%, transparent 3%, transparent 26%, transparent 26%, transparent 100%), radial-gradient(circle at 29% 28%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 51%, transparent 51%, transparent 75%, transparent 75%, transparent 100%), radial-gradient(circle at 77% 21%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 35%, transparent 35%, transparent 55%, transparent 55%, transparent 100%), radial-gradient(circle at 65% 91%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 46%, transparent 46%, transparent 76%, transparent 76%, transparent 100%), linear-gradient(45deg, rgb(0, 11, 255), rgb(218, 192, 255));
+  background-image: radial-gradient(circle at 29% 55%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 4%, transparent 4%, transparent 44%, transparent 44%, transparent 100%),
+    radial-gradient(circle at 85% 89%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 51%, transparent 51%, transparent 52%, transparent 52%, transparent 100%),
+    radial-gradient(circle at 6% 90%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 53%, transparent 53%, transparent 64%, transparent 64%, transparent 100%),
+    radial-gradient(circle at 35% 75%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 6%, transparent 6%, transparent 98%, transparent 98%, transparent 100%),
+    radial-gradient(circle at 56% 75%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 16%, transparent 16%, transparent 23%, transparent 23%, transparent 100%),
+    radial-gradient(circle at 42% 0%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 3%, transparent 3%, transparent 26%, transparent 26%, transparent 100%),
+    radial-gradient(circle at 29% 28%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 51%, transparent 51%, transparent 75%, transparent 75%, transparent 100%),
+    radial-gradient(circle at 77% 21%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 35%, transparent 35%, transparent 55%, transparent 55%, transparent 100%),
+    radial-gradient(circle at 65% 91%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 46%, transparent 46%, transparent 76%, transparent 76%, transparent 100%),
+    linear-gradient(45deg, rgb(0, 11, 255), rgb(218, 192, 255));
+}
+
+.service-section-gradient {
+  background-image: linear-gradient(135deg, rgb(235, 235, 235), rgb(226, 226, 226)),
+    linear-gradient(112.5deg, rgb(140, 144, 184) 0%, rgb(140, 144, 184) 38%, rgb(129, 123, 193) 38%, rgb(129, 123, 193) 51%, rgb(106, 112, 202) 51%, rgb(106, 112, 202) 68%, rgb(89, 94, 212) 68%, rgb(89, 94, 212) 71%, rgb(86, 72, 221) 71%, rgb(86, 72, 221) 80%, rgb(68, 55, 235) 80%, rgb(68, 55, 235) 100%),
+    linear-gradient(157.5deg, rgb(140, 144, 184) 0%, rgb(140, 144, 184) 38%, rgb(129, 123, 193) 38%, rgb(129, 123, 193) 51%, rgb(106, 112, 202) 51%, rgb(106, 112, 202) 68%, rgb(89, 94, 212) 68%, rgb(89, 94, 212) 71%, rgb(86, 72, 221) 71%, rgb(86, 72, 221) 80%, rgb(68, 55, 235) 80%, rgb(68, 55, 235) 100%);
+  background-blend-mode: overlay, overlay, normal;
 }
 
 @keyframes text-in {
@@ -56,4 +74,13 @@ h1 {
     letter-spacing: -0.75em;
     opacity: 0;
   }
+}
+
+.carousel-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  transition: transform 0.5s ease-in-out;
 }
