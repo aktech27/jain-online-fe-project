@@ -14,49 +14,49 @@ const Gallery = () => {
       <h3 className="text-center text-5xl">Our Gallery</h3>
       <h4 className="text-center text-2xl text-gray-800 mb-4 mt-2">Visual Stories from the World's Most Enchanting Places</h4>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
-        <div className="grid gap-4">
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image1} alt="gallery-image" />
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 px-3 md:px-4 lg:px-12 h-full">
+        <div className="grid grid-cols-1 grid-rows-12 gap-4">
+          <div className="rounded-lg overflow-hidden row-span-6">
+            <img className="h-full w-full object-cover" src={Image1} alt="gallery-image" />
           </div>
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image2} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-3">
+            <img className="h-full w-full object-cover" src={Image2} alt="gallery-image" />
           </div>
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image3} alt="gallery-image" />
-          </div>
-        </div>
-        <div className="grid gap-4">
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image4} alt="gallery-image" />
-          </div>
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image5} alt="gallery-image" />
-          </div>
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image6} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-3">
+            <img className="h-full w-full object-cover" src={Image3} alt="gallery-image" />
           </div>
         </div>
-        <div className="grid gap-4">
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image7} alt="gallery-image" />
+        <div className="grid grid-cols-1 grid-rows-12 gap-4">
+          <div className="rounded-lg overflow-hidden row-span-3">
+            <img className="h-full w-full object-cover" src={Image4} alt="gallery-image" />
           </div>
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image8} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-6">
+            <img className="h-full w-full object-cover" src={Image5} alt="gallery-image" />
           </div>
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image9} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-3">
+            <img className="h-full w-full object-cover" src={Image6} alt="gallery-image" />
           </div>
         </div>
-        <div className="grid gap-4">
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image1} alt="gallery-image" />
+        <div className="grid grid-cols-1 grid-rows-12 gap-4">
+          <div className="rounded-lg overflow-hidden row-span-4">
+            <img className="h-full w-full object-cover" src={Image7} alt="gallery-image" />
           </div>
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image2} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-3">
+            <img className="h-full w-full object-cover" src={Image8} alt="gallery-image" />
           </div>
-          <div>
-            <img className="h-auto max-w-full rounded-lg" src={Image3} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-5">
+            <img className="h-full w-full object-cover" src={Image9} alt="gallery-image" />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 grid-rows-12 gap-4">
+          <div className="rounded-lg overflow-hidden row-span-4">
+            <img className="h-full w-full object-cover" src={Image1} alt="gallery-image" />
+          </div>
+          <div className="rounded-lg overflow-hidden row-span-5">
+            <img className="h-full w-full object-cover" src={Image2} alt="gallery-image" />
+          </div>
+          <div className="rounded-lg overflow-hidden row-span-3">
+            <img className="h-full w-full object-cover" src={Image3} alt="gallery-image" />
           </div>
         </div>
       </div>
