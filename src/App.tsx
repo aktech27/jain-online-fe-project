@@ -1,4 +1,4 @@
-import { Navbar, HeroSection, BookNow, Packages, Services, Gallery, About } from './components';
+import { Navbar, HeroSection, BookNow, Packages, Services, Gallery, About, Footer } from './components';
 
 const App = () => {
   return (
@@ -10,6 +10,7 @@ const App = () => {
       <Services />
       <Gallery />
       <About />
+      <Footer />
     </>
   );
 };
