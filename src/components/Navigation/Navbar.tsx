@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
           <img src={Logo} className="h-8" alt="AK Logo" />
           <span className="self-center text-xl font-semibold whitespace-nowrap">AK Travels</span>
         </a>
-        <div className="block w-auto pl-8" id="navbar-dropdown">
+        <div className="hidden lg:block w-auto pl-8" id="navbar-dropdown">
           <ul className="flex items-center font-medium p-0 border-gray-100 rounded-lg space-x-6 rtl:space-x-reverse flex-row mt-0 border-0">
             {navItems.map((navItem) => (
               <li key={navItem.id} className={`relative flex items-center h-[60px] m-0 ${navItem.hasDropdown ? 'group' : ''}`}>
