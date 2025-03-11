@@ -13,8 +13,8 @@ import BgImage from '../../assets/AboutBg.jpg';
 const About = () => {
   return (
     <section id="gallery" className="min-h-screen py-6 about-section-gradient">
-      <h3 className="text-center text-5xl">About Us</h3>
-      <h4 className="text-center text-2xl text-gray-800 mb-4 mt-2">Discover Our Passion for Travel and Commitment to Unforgettable Experiences</h4>
+      <h3 className="text-center text-2xl md:text-3xl lg:text-5xl">About Us</h3>
+      <h4 className="text-center text-sm md:text-3md lg:text-2xl text-gray-800 mb-4 mt-2">Discover Our Passion for Travel and Commitment to Unforgettable Experiences</h4>
       <div className="min-h-[400px] lg:min-h-[70vh] grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-lg m-4 p-4">
         <div className="w-full h-full p-4 flex items-center justify-center rounded-lg overflow-hidden relative">
           <div className="absolute w-full h-full z-1">
@@ -47,16 +47,16 @@ const About = () => {
               detail.
             </p>
           </div>
-          <div className="w-[85%] mx-auto p-8 border-2 border-blue-500 mt-10 flex justify-around rounded-xl text-md">
-            <div className="flex flex-col items-center">
+          <div className="w-[85%] mx-auto p-8 border-2 border-blue-500 mt-10 flex flex-col sm:flex-row justify-around rounded-xl text-md">
+            <div className="flex flex-row sm:flex-col items-center">
               <span className="text-3xl font-extrabold mr-2">5+</span>
               <span>Years</span>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-row sm:flex-col items-center">
               <span className="text-3xl font-extrabold mr-2">10+</span>
               <span>Destinations</span>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-row sm:flex-col items-center">
               <span className="text-3xl font-extrabold mr-2">10000+</span>
               <span>Journeys</span>
             </div>

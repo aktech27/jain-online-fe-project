@@ -88,7 +88,7 @@ const Packages = () => {
   return (
     <section id="booknow" className="min-h-screen py-6">
       <h3 className="text-center text-5xl">Our Packages</h3>
-      <div className="grid grid-cols-3 gap-10 mx-auto w-[80vw] my-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto w-[80vw] my-4">
         {packageItems.map((pkg) => (
           <PackageCard key={pkg.id} image={pkg.image} name={pkg.placeName} description={pkg.description} price={pkg.price} rating={pkg.rating} />
         ))}
