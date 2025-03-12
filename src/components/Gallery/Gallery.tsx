@@ -7,12 +7,12 @@ import Image6 from '../../assets/places/coast.webp';
 import Image7 from '../../assets/places/newyork.jpg';
 import Image8 from '../../assets/places/australia.jpg';
 import Image9 from '../../assets/places/greece.jpg';
+import SectionHead from '../General/SectionHead';
 
 const Gallery = () => {
   return (
     <section id="gallery" className="min-h-screen py-6 gallery-section-gradient">
-      <h3 className="text-center text-5xl">Our Gallery</h3>
-      <h4 className="text-center text-2xl text-gray-800 mb-4 mt-2">Visual Stories from the World's Most Enchanting Places</h4>
+      <SectionHead title="Our Gallery" subtitle="Visual Stories from the World's Most Enchanting Places" />
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 px-3 md:px-4 lg:px-12 h-full">
         <div className="grid grid-cols-1 grid-rows-12 gap-4">

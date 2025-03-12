@@ -38,3 +38,8 @@ export interface ServiceCardItems {
 export interface ServiceCarouselProps {
   items: ServiceCardItems[];
 }
+
+export interface SectionHeadPropTypes {
+  title: string;
+  subtitle: string;
+}

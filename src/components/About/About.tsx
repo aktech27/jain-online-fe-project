@@ -9,12 +9,12 @@
 
 import Logo from '../../assets/aktechtbg.webp';
 import BgImage from '../../assets/AboutBg.jpg';
+import SectionHead from '../General/SectionHead';
 
 const About = () => {
   return (
     <section id="gallery" className="min-h-screen py-6 about-section-gradient">
-      <h3 className="text-center text-2xl md:text-3xl lg:text-5xl">About Us</h3>
-      <h4 className="text-center text-sm md:text-3md lg:text-2xl text-gray-800 mb-4 mt-2">Discover Our Passion for Travel and Commitment to Unforgettable Experiences</h4>
+      <SectionHead title="About Us" subtitle="Discover Our Passion for Travel and Commitment to Unforgettable Experiences" />
       <div className="min-h-[400px] lg:min-h-[70vh] grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-lg m-4 p-4">
         <div className="w-full h-full p-4 flex items-center justify-center rounded-lg overflow-hidden relative">
           <div className="absolute w-full h-full z-1">

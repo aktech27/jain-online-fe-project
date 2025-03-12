@@ -8,6 +8,7 @@ import Image6 from '../../assets/places/coast.webp';
 import Image7 from '../../assets/places/newyork.jpg';
 import Image8 from '../../assets/places/australia.jpg';
 import Image9 from '../../assets/places/greece.jpg';
+import SectionHead from '../General/SectionHead';
 
 const packageItems = [
   {
@@ -87,7 +88,7 @@ const packageItems = [
 const Packages = () => {
   return (
     <section id="booknow" className="min-h-screen py-6">
-      <h3 className="text-center text-5xl">Our Packages</h3>
+      <SectionHead title="Our Packages" subtitle="Curated Journeys to Unforgettable Destinations" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 mx-auto w-[90vw] max-w-[500px] md:max-w-none md:w-[100vw] 2xl:w-[80vw] my-2">
         {packageItems.map((pkg) => (
           <PackageCard key={pkg.id} image={pkg.image} name={pkg.placeName} description={pkg.description} price={pkg.price} rating={pkg.rating} />
