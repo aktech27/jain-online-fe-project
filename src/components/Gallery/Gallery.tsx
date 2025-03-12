@@ -16,47 +16,47 @@ const Gallery = () => {
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 px-3 md:px-4 lg:px-12 h-full">
         <div className="grid grid-cols-1 grid-rows-12 gap-4">
-          <div className="rounded-lg overflow-hidden row-span-6">
-            <img className="h-full w-full object-cover" src={Image1} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-6 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image1} alt="gallery-image" />
           </div>
-          <div className="rounded-lg overflow-hidden row-span-3">
-            <img className="h-full w-full object-cover" src={Image2} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-3 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image2} alt="gallery-image" />
           </div>
-          <div className="rounded-lg overflow-hidden row-span-3">
-            <img className="h-full w-full object-cover" src={Image3} alt="gallery-image" />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 grid-rows-12 gap-4">
-          <div className="rounded-lg overflow-hidden row-span-3">
-            <img className="h-full w-full object-cover" src={Image4} alt="gallery-image" />
-          </div>
-          <div className="rounded-lg overflow-hidden row-span-6">
-            <img className="h-full w-full object-cover" src={Image5} alt="gallery-image" />
-          </div>
-          <div className="rounded-lg overflow-hidden row-span-3">
-            <img className="h-full w-full object-cover" src={Image6} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-3 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image3} alt="gallery-image" />
           </div>
         </div>
         <div className="grid grid-cols-1 grid-rows-12 gap-4">
-          <div className="rounded-lg overflow-hidden row-span-4">
-            <img className="h-full w-full object-cover" src={Image7} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-3 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image4} alt="gallery-image" />
           </div>
-          <div className="rounded-lg overflow-hidden row-span-3">
-            <img className="h-full w-full object-cover" src={Image8} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-6 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image5} alt="gallery-image" />
           </div>
-          <div className="rounded-lg overflow-hidden row-span-5">
-            <img className="h-full w-full object-cover" src={Image9} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-3 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image6} alt="gallery-image" />
           </div>
         </div>
         <div className="grid grid-cols-1 grid-rows-12 gap-4">
-          <div className="rounded-lg overflow-hidden row-span-4">
-            <img className="h-full w-full object-cover" src={Image1} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-4 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image7} alt="gallery-image" />
           </div>
-          <div className="rounded-lg overflow-hidden row-span-5">
-            <img className="h-full w-full object-cover" src={Image2} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-3 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image8} alt="gallery-image" />
           </div>
-          <div className="rounded-lg overflow-hidden row-span-3">
-            <img className="h-full w-full object-cover" src={Image3} alt="gallery-image" />
+          <div className="rounded-lg overflow-hidden row-span-5 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image9} alt="gallery-image" />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 grid-rows-12 gap-4">
+          <div className="rounded-lg overflow-hidden row-span-4 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image1} alt="gallery-image" />
+          </div>
+          <div className="rounded-lg overflow-hidden row-span-5 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image2} alt="gallery-image" />
+          </div>
+          <div className="rounded-lg overflow-hidden row-span-3 hover:scale-105 transition-all duration-500">
+            <img className="h-full w-full" src={Image3} alt="gallery-image" />
           </div>
         </div>
       </div>
