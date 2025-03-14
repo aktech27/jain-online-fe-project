@@ -23,8 +23,8 @@ const HeroSection = () => {
     <section className="h-[calc(100vh-60px)] text-white flex items-center justify-center">
       <img className="absolute top-0 h-full w-screen -z-1 contrast-150 brightness-60" src={BgImage} alt="travel-background" />
       <div className="text-center flex flex-col justify-center gap-4 h-[90%]">
-        <h3 className="text-2xl md:text-3xl lg:text-5xl tracking-wide">Welcome to AK Travels</h3>
-        <h1 className="text-3xl md:text-6xl lg:text-9xl font-bold tracking-wider flex gap-10">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-wide">Welcome to AK Travels</h3>
+        <h1 className="text-3xl md:text-5xl lg:text-5xl xl:text-9xl font-bold tracking-wider flex gap-10">
           <div>Visit</div>
           <div className={`text-in overflow-hidden text-blue-500`}>{currentCountry}</div>
         </h1>
