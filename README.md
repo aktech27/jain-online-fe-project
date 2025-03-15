@@ -30,3 +30,15 @@ The front-end development project involves the development of web applications f
   - Price which should be in USD Dollar, Rating and book now button.
 - After Package Sections, add Services section where you need to add various services offered by the company. Some examples are Affordable Hotel, Food & Drinks, Safety Guide.
   - You need to add 6 services. You need to add 3 services by your own. These services should be design as per your convenience. Some may choose bullets, card, slider etc.
+
+## Checkpoint 3 - 15<sup>th</sup> March, 2025
+
+- After Services Sections, add Gallery section where you need to add various photos, glimpse experienced by the company.
+  - These gallery should be design as per your convenience. Some may choose card, slider etc.
+  - Add transform scale css property to the images when user hover mouse on it.
+- After the end of Gallery Section, add About Us section, create 2 sections of a row having 50% width each.
+  - In the 50% width add image related to brand or company.
+  - In the right 50% width add a company information, establishment other details as per your convenience.
+- Atlast (bottom) add footer.
+  - It should contain minimum brandname, social media icon like Instagram, facebook etc. Link may be inactive.
+  - Add copyright symbol with appropriate message like All Rights are Reserved.

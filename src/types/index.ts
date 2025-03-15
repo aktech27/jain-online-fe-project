@@ -1,6 +1,7 @@
 export interface NavbarItems {
   id: number;
   item: string;
+  itemId: string;
   hasDropdown?: boolean;
   subNavItems?: NavbarItems[];
 }
@@ -37,4 +38,9 @@ export interface ServiceCardItems {
 
 export interface ServiceCarouselProps {
   items: ServiceCardItems[];
+}
+
+export interface SectionHeadPropTypes {
+  title: string;
+  subtitle: string;
 }

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 nav,
 button {
   font-family: "JetBrains Mono", serif;
@@ -47,6 +51,22 @@ h1 {
     linear-gradient(112.5deg, rgb(140, 144, 184) 0%, rgb(140, 144, 184) 38%, rgb(129, 123, 193) 38%, rgb(129, 123, 193) 51%, rgb(106, 112, 202) 51%, rgb(106, 112, 202) 68%, rgb(89, 94, 212) 68%, rgb(89, 94, 212) 71%, rgb(86, 72, 221) 71%, rgb(86, 72, 221) 80%, rgb(68, 55, 235) 80%, rgb(68, 55, 235) 100%),
     linear-gradient(157.5deg, rgb(140, 144, 184) 0%, rgb(140, 144, 184) 38%, rgb(129, 123, 193) 38%, rgb(129, 123, 193) 51%, rgb(106, 112, 202) 51%, rgb(106, 112, 202) 68%, rgb(89, 94, 212) 68%, rgb(89, 94, 212) 71%, rgb(86, 72, 221) 71%, rgb(86, 72, 221) 80%, rgb(68, 55, 235) 80%, rgb(68, 55, 235) 100%);
   background-blend-mode: overlay, overlay, normal;
+}
+
+.gallery-section-gradient {
+  background-image:
+    linear-gradient(429deg, rgba(255, 255, 224, 0.75) 0%, rgba(255, 255, 224, 0.75) 42%, transparent 42%, transparent 99%, rgba(255, 255, 204, 0.75) 99%, rgba(255, 255, 204, 0.75) 100%),
+    linear-gradient(347deg, rgba(255, 255, 204, 0.75) 0%, rgba(255, 255, 204, 0.75) 11%, transparent 11%, transparent 92%, rgba(255, 255, 178, 0.75) 92%, rgba(255, 255, 178, 0.75) 100%),
+    linear-gradient(281deg, rgba(255, 255, 224, 0.75) 0%, rgba(255, 255, 224, 0.75) 1%, transparent 1%, transparent 45%, rgba(255, 255, 204, 0.75) 45%, rgba(255, 255, 204, 0.75) 100%),
+    linear-gradient(119deg, rgba(255, 255, 153, 0.75) 0%, rgba(255, 255, 153, 0.75) 33%, transparent 33%, transparent 40%, rgba(255, 255, 204, 0.75) 40%, rgba(255, 255, 204, 0.75) 100%),
+    linear-gradient(180deg, rgba(255, 255, 224, 0.75), rgba(255, 255, 224, 0.75));
+}
+
+.about-section-gradient {
+  background-image: linear-gradient(147deg, transparent 0%, transparent 8%, rgba(0, 123, 255, 0.45) 8%, rgba(0, 123, 255, 0.45) 46%, transparent 46%, transparent 100%),
+    linear-gradient(107deg, transparent 0%, transparent 21%, rgba(0, 123, 255, 0.45) 21%, rgba(0, 123, 255, 0.45) 53%, transparent 53%, transparent 100%),
+    linear-gradient(288deg, transparent 0%, transparent 35%, rgba(0, 123, 255, 0.45) 35%, rgba(0, 123, 255, 0.45) 91%, transparent 91%, transparent 100%),
+    linear-gradient(90deg, rgba(173, 216, 230, 0.45), rgba(173, 216, 230, 0.45));
 }
 
 @keyframes text-in {

@@ -5,6 +5,7 @@ import Image3 from '../../assets/services/safety.png';
 import Image4 from '../../assets/services/guided.png';
 import Image5 from '../../assets/services/transportation.png';
 import Image6 from '../../assets/services/insurance.png';
+import SectionHead from '../General/SectionHead';
 
 const serviceItems = [
   {
@@ -47,9 +48,8 @@ const serviceItems = [
 
 const Services = () => {
   return (
-    <section id="services" className="h-screen py-6 service-section-gradient">
-      <h3 className="text-center text-5xl">Our Services</h3>
-      <h4 className="text-center text-2xl text-gray-600 mb-4 mt-2">From Booking to Adventure - We got it all covered</h4>
+    <section id="services" className="py-6 service-section-gradient">
+      <SectionHead title="Our Services" subtitle="From Booking to Adventure - We got it all covered" />
       <ServiceCarousel items={serviceItems} />
     </section>
   );
