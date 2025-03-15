@@ -87,6 +87,7 @@ const Navbar: React.FC = () => {
         <a href="#" className="flex items-center space-x-2 rtl:space-x-reverse">
           <img src={Logo} className="h-8" alt="AK Logo" />
           <span className="self-center text-xl md:text-lg lg:text-sm xl:text-xl font-semibold whitespace-nowrap">AK Travels</span>
+          <span className="self-center text-xl md:text-lg lg:text-sm xl:text-xl font-semibold whitespace-nowrap">AK Travels</span>
         </a>
         <div onClick={handleNavSideBar} className="h-8 w-8 border-white border-1 rounded-md ml-auto">
           {!isOpen ? (
