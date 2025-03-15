@@ -48,7 +48,7 @@ const serviceItems = [
 
 const Services = () => {
   return (
-    <section id="services" className="h-screen py-6 service-section-gradient">
+    <section id="services" className="py-6 service-section-gradient">
       <SectionHead title="Our Services" subtitle="From Booking to Adventure - We got it all covered" />
       <ServiceCarousel items={serviceItems} />
     </section>
