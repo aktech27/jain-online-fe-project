@@ -1,6 +1,7 @@
 export interface NavbarItems {
   id: number;
   item: string;
+  itemId: string;
   hasDropdown?: boolean;
   subNavItems?: NavbarItems[];
 }

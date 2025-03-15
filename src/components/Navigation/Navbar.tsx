@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from '../../assets/aktechtbg.webp';
 import { NavbarItems } from '../../types';
 
@@ -7,45 +7,55 @@ const Navbar: React.FC = () => {
     {
       id: 1,
       item: 'Home',
+      itemId: 'home',
     },
     {
       id: 2,
       item: 'Book',
+      itemId: 'booknow',
     },
     {
       id: 3,
       item: 'Packages',
+      itemId: '',
       hasDropdown: true,
       subNavItems: [
         {
           id: 7,
           item: 'United States',
+          itemId: 'packages',
         },
         {
           id: 8,
           item: 'France',
+          itemId: 'packages',
         },
         {
           id: 9,
           item: 'India',
+          itemId: 'packages',
         },
         {
           id: 10,
           item: 'Germany',
+          itemId: 'packages',
         },
       ],
     },
     {
       id: 4,
       item: 'Services',
+      itemId: 'services',
     },
     {
       id: 5,
       item: 'Gallery',
+      itemId: 'gallery',
     },
     {
       id: 6,
       item: 'About',
+      itemId: 'about',
     },
   ];
 
@@ -71,15 +81,22 @@ const Navbar: React.FC = () => {
     toggleOpen();
   };
 
-  // useEffect(() => {
-  //   const closeIfDropDownOpen = () => {
-  //     setIsSelected(false);
-  //   };
-  //   document.addEventListener('click', closeIfDropDownOpen);
-  //   return () => {
-  //     document.removeEventListener('click', closeIfDropDownOpen);
-  //   };
-  // }, []);
+  const handleMobNavClick = () => {
+    window.onscroll = function () {};
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    const closeIfDropDownOpen = (ev: MouseEvent) => {
+      if ((ev?.target as HTMLElement)?.innerText != 'Packages') {
+        setIsSelected(false);
+      }
+    };
+    document.addEventListener('click', closeIfDropDownOpen);
+    return () => {
+      document.removeEventListener('click', closeIfDropDownOpen);
+    };
+  }, []);
 
   return (
     <nav className="border-gray-200 bg-black/40 shadow-lg shadow-white/50 text-white">
@@ -87,14 +104,13 @@ const Navbar: React.FC = () => {
         <a href="#" className="flex items-center space-x-2 rtl:space-x-reverse">
           <img src={Logo} className="h-8" alt="AK Logo" />
           <span className="self-center text-xl md:text-lg lg:text-sm xl:text-xl font-semibold whitespace-nowrap">AK Travels</span>
-          <span className="self-center text-xl md:text-lg lg:text-sm xl:text-xl font-semibold whitespace-nowrap">AK Travels</span>
         </a>
-        <div onClick={handleNavSideBar} className="h-8 w-8 border-white border-1 rounded-md ml-auto">
+        <div onClick={handleNavSideBar} className="h-8 w-8 border-white border-1 rounded-md ml-auto lg:hidden">
           {!isOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 40 40">
-              <rect x="5" y="10" width="30" height="3" fill="white" rx="2.5" stroke="gray" stroke-width="1" />
-              <rect x="5" y="18" width="30" height="3" fill="white" rx="2.5" stroke="gray" stroke-width="1" />
-              <rect x="5" y="26" width="30" height="3" fill="white" rx="2.5" stroke="gray" stroke-width="1" />
+              <rect x="5" y="10" width="30" height="3" fill="white" rx="2.5" stroke="gray" strokeWidth="1" />
+              <rect x="5" y="18" width="30" height="3" fill="white" rx="2.5" stroke="gray" strokeWidth="1" />
+              <rect x="5" y="26" width="30" height="3" fill="white" rx="2.5" stroke="gray" strokeWidth="1" />
             </svg>
           ) : (
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 26 26">
@@ -112,10 +128,14 @@ const Navbar: React.FC = () => {
                 <>
                   <li
                     key={navItem.id}
-                    onClick={navItem.hasDropdown ? toggleSelect : undefined}
+                    onClick={navItem.hasDropdown ? toggleSelect : handleMobNavClick}
                     className="relative w-[90%] flex flex-col items-center h-[60px] m-0 last:border-b-0 border-b-1 border-white"
                   >
-                    <a href="#" className="flex items-center transition-all duration-300 rounded-sm border-0 hover:text-blue-500 p-6 h-[50%] hover:bg-black/40 hover:scale-115">
+                    <a
+                      href={`#${navItem.itemId}`}
+                      onClick={handleMobNavClick}
+                      className="flex items-center transition-all duration-300 rounded-sm border-0 hover:text-blue-500 p-6 h-[50%] hover:bg-black/40 hover:scale-115"
+                    >
                       {navItem.item}
                     </a>
                   </li>
@@ -123,7 +143,7 @@ const Navbar: React.FC = () => {
                     <>
                       {navItem.subNavItems!.map((subNavItem) => (
                         <li key={subNavItem.id} className="relative flex flex-col items-center h-[60px] m-0">
-                          <a href="#" className="flex items-center transition-all duration-300 rounded-sm border-0 hover:text-blue-500 p-6 h-[50%] hover:bg-black/40 hover:scale-115">
+                          <a href="#packages" className="flex items-center transition-all duration-300 rounded-sm border-0 hover:text-blue-500 p-6 h-[50%] hover:bg-black/40 hover:scale-115">
                             {subNavItem.item}
                           </a>
                         </li>
@@ -139,7 +159,7 @@ const Navbar: React.FC = () => {
           <ul className="flex items-center font-medium p-0 border-gray-100 rounded-lg space-x-6 rtl:space-x-reverse flex-row mt-0 border-0">
             {navItems.map((navItem) => (
               <li key={navItem.id} onClick={navItem.hasDropdown ? toggleSelect : undefined} className={`relative flex items-center h-[60px] m-0 ${navItem.hasDropdown ? 'group' : ''}`}>
-                <a href="#" className="flex items-center transition-all duration-300 rounded-sm border-0 hover:text-blue-500 p-6 h-[50%] hover:bg-black/40 hover:scale-115">
+                <a href={`#${navItem.itemId}`} className="flex items-center transition-all duration-300 rounded-sm border-0 hover:text-blue-500 p-6 h-[50%] hover:bg-black/40 hover:scale-115">
                   {navItem.item}
                 </a>
                 {navItem.hasDropdown && (
@@ -147,7 +167,7 @@ const Navbar: React.FC = () => {
                     <ul className="cursor-pointer">
                       {navItem.subNavItems!.map((subNavItem) => (
                         <li key={subNavItem.id} className="p-4 rounded transition-all duration-300 hover:text-blue-500 hover:bg-black/40 hover:scale-110">
-                          {subNavItem.item}
+                          <a href="#packages">{subNavItem.item}</a>
                         </li>
                       ))}
                     </ul>

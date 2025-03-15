@@ -55,7 +55,7 @@ const ServiceCarousel = ({ items }: ServiceCarouselProps) => {
   };
 
   return (
-    <div className="w-[90vw] mx-auto">
+    <div className="sm:w-[85vw] w-[90vw] mx-auto">
       <Slider {...settings}>
         {items.map((service, index) => (
           <div key={index} className={`relative flex flex-col min-w-[30vw] aspect-[5/4] shadow-2xl rounded-md scale-90`}>

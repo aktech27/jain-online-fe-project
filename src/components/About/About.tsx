@@ -1,19 +1,10 @@
-// TECH: Travel Experience, Connectivity, and Hospitality
-//
-
-//
-
-//
-
-//
-
 import Logo from '../../assets/aktechtbg.webp';
 import BgImage from '../../assets/AboutBg.jpg';
 import SectionHead from '../General/SectionHead';
 
 const About = () => {
   return (
-    <section id="gallery" className="min-h-screen py-6 about-section-gradient">
+    <section id="about" className="min-h-screen py-6 about-section-gradient">
       <SectionHead title="About Us" subtitle="Discover Our Passion for Travel and Commitment to Unforgettable Experiences" />
       <div className="min-h-[400px] lg:min-h-[70vh] grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-lg m-4 p-4">
         <div className="w-full h-full p-4 flex items-center justify-center rounded-lg overflow-hidden relative">
@@ -48,15 +39,15 @@ const About = () => {
             </p>
           </div>
           <div className="w-[85%] mx-auto p-8 border-2 border-blue-500 mt-10 flex flex-col sm:flex-row justify-around rounded-xl text-md">
-            <div className="flex flex-row sm:flex-col items-center">
+            <div className="flex flex-row sm:flex-col m-auto items-center">
               <span className="text-3xl font-extrabold mr-2">5+</span>
               <span>Years</span>
             </div>
-            <div className="flex flex-row sm:flex-col items-center">
+            <div className="flex flex-row sm:flex-col m-auto items-center">
               <span className="text-3xl font-extrabold mr-2">10+</span>
               <span>Destinations</span>
             </div>
-            <div className="flex flex-row sm:flex-col items-center">
+            <div className="flex flex-row sm:flex-col m-auto items-center">
               <span className="text-3xl font-extrabold mr-2">10000+</span>
               <span>Journeys</span>
             </div>

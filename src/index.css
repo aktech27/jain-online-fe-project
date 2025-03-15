@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 nav,
 button {
   font-family: "JetBrains Mono", serif;
