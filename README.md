@@ -42,3 +42,14 @@ The front-end development project involves the development of web applications f
 - Atlast (bottom) add footer.
   - It should contain minimum brandname, social media icon like Instagram, facebook etc. Link may be inactive.
   - Add copyright symbol with appropriate message like All Rights are Reserved.
+
+## Checkpoint 4 - 29<sup>th</sup> March, 2025
+
+- After clicking on the Register Button, Modal should appear if you know Bootstrap OR you may choose to open a new page that is register.html.
+  - In the register form, add fullname, contact, date of birth, email id, password, gender, register button.
+  - Below register button, link which should redirect to login.
+  - Use proper Javascript validation and proper CSS design
+- After clicking on the Login Button, Modal should appear if you know Bootstrap OR you may choose to open a new page that is login.html.
+  - In the login form, it should contain email id and password and login button.
+  - Below login button, link which redirect to register page should be visible.
+- Deploy your website freely on github or netlify.
