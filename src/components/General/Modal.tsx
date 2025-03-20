@@ -1,10 +1,13 @@
-import LoginForm from '../Login/LoginForm';
+import { ModalPropTypes } from '../../types';
 
-const Modal = () => {
+const Modal: React.FC<ModalPropTypes> = ({ isOpen, handleClose, children }) => {
   return (
-    <div className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen max-h-full bg-black/90 grid place-items-center">
-      <div className="relative bg-slate-200 p-4 w-full max-w-2xl max-h-full">
-        <LoginForm />
+    <div className={`fixed inset-0 flex justify-center items-center transition-colors ${isOpen ? 'visible bg-black/20' : 'invisible'}`}>
+      <div className={`bg-white rounded-xl shadow p-6 transition-all ${isOpen ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}`}>
+        <button onClick={handleClose} className="absolute top-2 right-2 p-1 rounded-lg text-gray-400 bg-white hover:bg-gray-50 hover:text-gray-600">
+          X
+        </button>
+        {children}
       </div>
     </div>
   );
