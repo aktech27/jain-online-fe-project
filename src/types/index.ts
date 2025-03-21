@@ -45,8 +45,8 @@ export interface SectionHeadPropTypes {
   subtitle: string;
 }
 
-export interface ModalPropTypes {
-  isOpen: boolean;
+export interface ModalContextStateTypes {
+  isModalOpen: boolean;
   handleClose: () => void;
-  children: React.ReactNode;
+  handleOpen: () => void;
 }

@@ -1,9 +1,12 @@
 import { Navbar, HeroSection, BookNow, Packages, Services, Gallery, About, Footer } from './components';
+import ModalContextProvider from './context/Providers/ModalContext';
 
 const App = () => {
   return (
     <>
-      <Navbar />
+      <ModalContextProvider>
+        <Navbar />
+      </ModalContextProvider>
       <HeroSection />
       <BookNow />
       <Packages />
