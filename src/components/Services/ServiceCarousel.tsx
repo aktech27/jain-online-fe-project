@@ -3,12 +3,14 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-function SampleNextArrow(props) {
+type SlickSliderPropTypes = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+
+function SampleNextArrow(props: SlickSliderPropTypes) {
   const { className, style, onClick } = props;
   return <div className={className} style={{ ...style, display: 'block', background: 'gray', borderRadius: '100vw' }} onClick={onClick} />;
 }
 
-function SamplePrevArrow(props) {
+function SamplePrevArrow(props: SlickSliderPropTypes) {
   const { className, style, onClick } = props;
   return <div className={className} style={{ ...style, display: 'block', background: 'gray', borderRadius: '100vw' }} onClick={onClick} />;
 }
