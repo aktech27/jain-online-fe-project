@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
     },
   ];
 
-  const { isModalOpen, modalType } = useContext(ModalContext);
+  const { modalType } = useContext(ModalContext);
 
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -122,7 +122,7 @@ const Navbar: React.FC = () => {
           <AuthButtons />
         </div>
       </nav>
-      {isModalOpen && <Modal>{modalType === 'LOGIN' ? <LoginForm /> : <RegisterForm />}</Modal>}
+      <Modal>{modalType === 'LOGIN' ? <LoginForm /> : <RegisterForm />}</Modal>
     </>
   );
 };

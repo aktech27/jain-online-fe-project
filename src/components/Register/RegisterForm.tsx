@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import Logo from '../../assets/aktechtbg.webp';
+import { ModalContext } from '../../context';
 
 const RegisterForm = () => {
+  const { handleOpen } = useContext(ModalContext);
   return (
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto">
       <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
@@ -84,7 +87,7 @@ const RegisterForm = () => {
             </button>
             <p className="text-sm font-light text-gray-500">
               Already have an account yet?
-              <a href="#" className="font-medium text-blue-600 hover:underline">
+              <a onClick={() => handleOpen('LOGIN')} className="font-medium text-blue-600 hover:underline cursor-pointer">
                 Sign in
               </a>
             </p>
