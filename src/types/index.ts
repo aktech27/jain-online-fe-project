@@ -45,8 +45,11 @@ export interface SectionHeadPropTypes {
   subtitle: string;
 }
 
+export type ModalType = 'LOGIN' | 'REGISTER' | null;
+
 export interface ModalContextStateTypes {
   isModalOpen: boolean;
+  modalType: ModalType;
   handleClose: () => void;
-  handleOpen: () => void;
+  handleOpen: (type: ModalType) => void;
 }

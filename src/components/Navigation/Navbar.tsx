@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Logo from '../../assets/aktechtbg.webp';
 import { NavbarItems } from '../../types';
 import NavIcon from './NavIcon';
 import NavMobile from './NavItemsMobile';
 import NavItems from './NavItems';
 import AuthButtons from './AuthButtons';
+import Modal from '../General/Modal';
+import LoginForm from '../Login/LoginForm';
+import { ModalContext } from '../../context';
+import RegisterForm from '../Register/RegisterForm';
 
 const Navbar: React.FC = () => {
   const navItems: NavbarItems[] = [
@@ -63,6 +67,8 @@ const Navbar: React.FC = () => {
     },
   ];
 
+  const { isModalOpen, modalType } = useContext(ModalContext);
+
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -103,18 +109,21 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <nav className="border-gray-200 bg-black/40 shadow-lg shadow-white/50 text-white">
-      <div className="flex flex-wrap lg:flex-nowrap items-center gap-2 mx-auto px-2 min-h-[60px]">
-        <a href="#" className="flex items-center space-x-2 rtl:space-x-reverse">
-          <img src={Logo} className="h-8" alt="AK Logo" />
-          <span className="self-center text-xl md:text-lg lg:text-sm xl:text-xl font-semibold whitespace-nowrap">AK Travels</span>
-        </a>
-        <NavIcon isOpen={isOpen} handleNavSideBar={handleNavSideBar} />
-        {isOpen ? <NavMobile navItems={navItems} isSelected={isSelected} handleMobNavClick={handleMobNavClick} toggleSelect={toggleSelect} /> : null}
-        <NavItems navItems={navItems} isSelected={isSelected} toggleSelect={toggleSelect} />
-        <AuthButtons />
-      </div>
-    </nav>
+    <>
+      <nav className="border-gray-200 bg-black/40 shadow-lg shadow-white/50 text-white">
+        <div className="flex flex-wrap lg:flex-nowrap items-center gap-2 mx-auto px-2 min-h-[60px]">
+          <a href="#" className="flex items-center space-x-2 rtl:space-x-reverse">
+            <img src={Logo} className="h-8" alt="AK Logo" />
+            <span className="self-center text-xl md:text-lg lg:text-sm xl:text-xl font-semibold whitespace-nowrap">AK Travels</span>
+          </a>
+          <NavIcon isOpen={isOpen} handleNavSideBar={handleNavSideBar} />
+          {isOpen ? <NavMobile navItems={navItems} isSelected={isSelected} handleMobNavClick={handleMobNavClick} toggleSelect={toggleSelect} /> : null}
+          <NavItems navItems={navItems} isSelected={isSelected} toggleSelect={toggleSelect} />
+          <AuthButtons />
+        </div>
+      </nav>
+      {isModalOpen && <Modal>{modalType === 'LOGIN' ? <LoginForm /> : <RegisterForm />}</Modal>}
+    </>
   );
 };
 

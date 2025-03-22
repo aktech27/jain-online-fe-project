@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { ModalContext } from '../index';
+import { ModalType } from '../../types';
 
 const ModalContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isModalOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState<ModalType>(null);
   const handleClose = () => {
-    setIsOpen(false);
+    setIsModalOpen(false);
+    setModalType(null);
   };
-  const handleOpen = () => {
-    setIsOpen(true);
+  const handleOpen = (type: ModalType) => {
+    setModalType(type);
+    setIsModalOpen(true);
   };
-  return <ModalContext.Provider value={{ isModalOpen, handleClose, handleOpen }}>{children}</ModalContext.Provider>;
+  return <ModalContext.Provider value={{ isModalOpen, modalType, handleClose, handleOpen }}>{children}</ModalContext.Provider>;
 };
 
 export default ModalContextProvider;

@@ -41,7 +41,7 @@ const NavMobile = ({ navItems, isSelected, handleMobNavClick, toggleSelect }: Pr
           </>
         ))}
       </ul>
-      <MobileAuthButtons />
+      <MobileAuthButtons handleMobNavClick={handleMobNavClick} />
     </div>
   );
 };
