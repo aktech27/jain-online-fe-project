@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface NavbarItems {
   id: number;
   item: string;
@@ -52,4 +54,25 @@ export interface ModalContextStateTypes {
   modalType: ModalType;
   handleClose: () => void;
   handleOpen: (type: ModalType) => void;
+}
+
+export interface AuthContextState {
+  isLoggedIn: boolean;
+  lastLogin: null | Date;
+  user: null | object;
+}
+
+export enum AuthContextTypes {
+  LOGIN = 'LOGIN',
+  REGISTER = 'REGISTER',
+  LOGOUT = 'LOGOUT',
+}
+export interface AuthContextAction {
+  type: AuthContextTypes;
+  payload?: null | object;
+}
+
+export interface IAuthContext {
+  authState: AuthContextState;
+  dispatch: React.Dispatch<AuthContextAction> | null;
 }
