@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { ModalContextStateTypes } from '../types';
+import { AuthContextState, IAuthContext, ModalContextStateTypes } from '../types';
 
 export const ModalContext = createContext<ModalContextStateTypes>({
   isModalOpen: false,
@@ -7,3 +7,11 @@ export const ModalContext = createContext<ModalContextStateTypes>({
   handleClose: () => {},
   handleOpen: () => {},
 });
+
+export const DEFAULT_AUTH_STATE: AuthContextState = {
+  isLoggedIn: false,
+  lastLogin: null,
+  user: null,
+};
+
+export const AuthContext = createContext<IAuthContext>({ authState: DEFAULT_AUTH_STATE, dispatch: null });
