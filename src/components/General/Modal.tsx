@@ -17,7 +17,7 @@ const Modal: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className={`fixed z-15 inset-0 flex justify-center items-center transition-colors ${isModalOpen ? 'visible bg-black/20' : 'invisible'}`}>
-      <div className={`bg-white rounded-xl shadow p-6 transition-all ${isModalOpen ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}`}>
+      <div className={`bg-white rounded-xl shadow p-3 transition-all ${isModalOpen ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}`}>
         <button onClick={handleClose} className="absolute top-0 right-0 p-1 rounded-lg text-gray-400 bg-white hover:bg-gray-50 hover:text-gray-600 hover:scale-105 cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
             <g>

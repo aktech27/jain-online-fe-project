@@ -1,17 +1,19 @@
 import { useContext, useState } from 'react';
 import Logo from '../../assets/aktechtbg.webp';
 import { ModalContext } from '../../context';
+import { RegisterFormErrors, RegisterFormItems } from '../../types';
+import { checkIfFutureDate } from '../../utils/dateFunctions';
 
 const RegisterForm = () => {
   const { handleOpen } = useContext(ModalContext);
-  const defaultRegisterFormState = {
+  const defaultRegisterFormState: RegisterFormItems = {
     name: '',
     dob: '',
     email: '',
     contact: '',
     password: '',
   };
-  const defaultRegisterFormErrors = {
+  const defaultRegisterFormErrors: RegisterFormErrors = {
     name: '',
     dob: '',
     email: '',
@@ -19,8 +21,8 @@ const RegisterForm = () => {
     password: '',
   };
 
-  const [formState, setFormState] = useState(defaultRegisterFormState);
-  const [formErrors, setFormErrors] = useState(defaultRegisterFormErrors);
+  const [formState, setFormState] = useState<RegisterFormItems>(defaultRegisterFormState);
+  const [formErrors, setFormErrors] = useState<RegisterFormErrors>(defaultRegisterFormErrors);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,8 +31,7 @@ const RegisterForm = () => {
 
   const handleFullFormValidation = () => {
     for (const [field, value] of Object.entries(formState)) {
-      console.log(field, value);
-      setFormErrors((prev) => ({ ...prev }));
+      handleValidation(field as keyof RegisterFormItems, value);
     }
   };
 
@@ -39,10 +40,65 @@ const RegisterForm = () => {
       ...prev,
       [field]: value,
     }));
+    handleValidation(field as keyof RegisterFormItems, value);
+  };
+
+  const handleValidation = (field: keyof RegisterFormItems, value: string) => {
+    switch (field) {
+      case 'name':
+        if (!value) {
+          setFormErrors((prev) => ({ ...prev, name: 'Please provide a name' }));
+        } else if (!new RegExp(/^[a-zA-Z\s]*$/).test(value)) {
+          setFormErrors((prev) => ({ ...prev, name: 'Invalid name' }));
+        } else {
+          setFormErrors((prev) => ({ ...prev, name: '' }));
+        }
+        break;
+      case 'email':
+        if (!value) {
+          setFormErrors((prev) => ({ ...prev, email: 'Please provide a valid email' }));
+        } else if (!new RegExp(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/).test(value)) {
+          setFormErrors((prev) => ({ ...prev, email: 'Invalid email id' }));
+        } else {
+          setFormErrors((prev) => ({ ...prev, email: '' }));
+        }
+        break;
+      case 'password':
+        if (!value) {
+          setFormErrors((prev) => ({ ...prev, password: 'Please give a password' }));
+        } else if (value?.length < 6 || value.length > 12) {
+          setFormErrors((prev) => ({ ...prev, password: 'Atleast 6 - 12 characters is required' }));
+        } else {
+          setFormErrors((prev) => ({ ...prev, password: '' }));
+        }
+        break;
+      case 'dob':
+        if (!value) {
+          setFormErrors((prev) => ({ ...prev, dob: 'Please select a valid DOB' }));
+        } else if (checkIfFutureDate(value)) {
+          setFormErrors((prev) => ({ ...prev, dob: 'DOB cannot be in future' }));
+        } else {
+          setFormErrors((prev) => {
+            return { ...prev, dob: '' };
+          });
+        }
+        break;
+      case 'contact':
+        if (!value) {
+          setFormErrors((prev) => ({ ...prev, contact: 'Please provide contact number' }));
+        } else if (!new RegExp(/^[0-9]{10}/).test(value)) {
+          setFormErrors((prev) => ({ ...prev, contact: 'Invalid contact number' }));
+        } else {
+          setFormErrors((prev) => ({ ...prev, contact: '' }));
+        }
+        break;
+      default:
+        break;
+    }
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto">
+    <div className="flex flex-col items-center justify-center px-2 py-8 mx-auto w-[min(650px,90vw)]">
       <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
         <img className="w-8 h-8 mr-2" src={Logo} alt="logo" />
         AK Travels

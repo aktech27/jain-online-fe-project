@@ -76,3 +76,20 @@ export interface IAuthContext {
   authState: AuthContextState;
   dispatch: React.Dispatch<AuthContextAction> | null;
 }
+
+export interface RegisterFormItems {
+  name: string;
+  dob: string;
+  email: string;
+  contact: string;
+  password: string;
+}
+
+export type RegisterFormErrors = RegisterFormItems;
+
+export interface LoginFormItems {
+  email: string;
+  password: string;
+}
+
+export type LoginFormErrors = LoginFormItems;

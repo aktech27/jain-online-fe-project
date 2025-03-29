@@ -27,3 +27,15 @@ export const calculateDaysBetween = (dateString1: string, dateString2: string): 
   const dayMs = 24 * 60 * 60 * 100;
   return (new Date(dateString1).getTime() - new Date(dateString2).getTime()) / dayMs;
 };
+
+export const checkIfFutureDate = (dateString: string): boolean => {
+  const current = {
+    year: new Date(Date.now()).getFullYear(),
+    month: new Date(Date.now()).getMonth(),
+    date: new Date(Date.now()).getDate(),
+  };
+  if (new Date(current.year, current.month, current.date).getTime() < new Date(dateString).getTime()) {
+    return true;
+  }
+  return false;
+};
