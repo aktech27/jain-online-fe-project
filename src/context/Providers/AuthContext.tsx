@@ -5,7 +5,7 @@ import authReducer from '../Reducers/AuthReducer';
 const AuthContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const init = () => {
     if (!localStorage.getItem('registeredUsers')) {
-      localStorage.setItem('registeredUsers', JSON.stringify([]));
+      localStorage.setItem('registeredUsers', JSON.stringify([{ name: 'Ahamed Kabeer', dob: '2000-11-27', email: 'ahamedkbr85@gmail.com', contact: '9000000000', password: 'Test@123' }]));
     }
     if (!localStorage.getItem('authUser')) {
       return {
