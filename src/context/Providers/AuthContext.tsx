@@ -4,11 +4,22 @@ import authReducer from '../Reducers/AuthReducer';
 
 const AuthContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const init = () => {
-    return {
-      isLoggedIn: false,
-      lastLogin: null,
-      user: null,
-    };
+    if (!localStorage.getItem('registeredUsers')) {
+      localStorage.setItem('registeredUsers', JSON.stringify([]));
+    }
+    if (!localStorage.getItem('authUser')) {
+      return {
+        isLoggedIn: false,
+        lastLogin: null,
+        user: null,
+      };
+    } else {
+      return {
+        isLoggedIn: false,
+        lastLogin: null,
+        user: null,
+      };
+    }
   };
   const [authState, dispatch] = useReducer(authReducer, DEFAULT_AUTH_STATE, init);
 

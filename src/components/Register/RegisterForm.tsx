@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Logo from '../../assets/aktechtbg.webp';
 import { ModalContext } from '../../context';
 import { RegisterFormErrors, RegisterFormItems } from '../../types';
@@ -23,10 +23,27 @@ const RegisterForm = () => {
 
   const [formState, setFormState] = useState<RegisterFormItems>(defaultRegisterFormState);
   const [formErrors, setFormErrors] = useState<RegisterFormErrors>(defaultRegisterFormErrors);
+  const [availableEmails, setAvailableEmails] = useState<string[]>([]);
+
+  useEffect(() => {
+    const registeredUsers: RegisterFormItems[] = JSON.parse(localStorage.getItem('registeredUsers') || JSON.stringify([]));
+    const registeredMails: string[] = registeredUsers?.map((user) => user.email);
+    setAvailableEmails(registeredMails);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formState);
+    const isValid = Object.values(formErrors).every((value) => value == '');
+    if (isValid) {
+      const registeredUsers: RegisterFormItems[] = JSON.parse(localStorage.getItem('registeredUsers') || JSON.stringify([]));
+      registeredUsers?.push(formState);
+      localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+      setAvailableEmails((prev) => [...prev, formState.email]);
+      window.alert('Registration Successfull. You can login now');
+      setFormState(defaultRegisterFormState);
+      setFormErrors(defaultRegisterFormErrors);
+      handleOpen('LOGIN');
+    }
   };
 
   const handleFullFormValidation = () => {
@@ -59,6 +76,8 @@ const RegisterForm = () => {
           setFormErrors((prev) => ({ ...prev, email: 'Please provide a valid email' }));
         } else if (!new RegExp(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/).test(value)) {
           setFormErrors((prev) => ({ ...prev, email: 'Invalid email id' }));
+        } else if (availableEmails.includes(value)) {
+          setFormErrors((prev) => ({ ...prev, email: 'Email is already registered' }));
         } else {
           setFormErrors((prev) => ({ ...prev, email: '' }));
         }
