@@ -4,7 +4,7 @@ import { AuthContextAction, AuthContextState, AuthContextTypes } from '../../typ
 export default function AuthReducer(state: AuthContextState, action: AuthContextAction) {
   switch (action.type) {
     case AuthContextTypes.LOGIN:
-      console.log(action.payload);
+      localStorage.setItem('authUser', JSON.stringify(action.payload!.user));
       return {
         ...state,
         user: action.payload?.user,
@@ -13,6 +13,7 @@ export default function AuthReducer(state: AuthContextState, action: AuthContext
     case AuthContextTypes.REGISTER:
       return state;
     case AuthContextTypes.LOGOUT:
+      localStorage.removeItem('authUser');
       return {
         ...state,
         ...DEFAULT_AUTH_STATE,

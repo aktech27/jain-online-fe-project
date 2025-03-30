@@ -15,9 +15,9 @@ const AuthContextProvider: React.FC<{ children: React.ReactNode }> = ({ children
       };
     } else {
       return {
-        isLoggedIn: false,
+        isLoggedIn: true,
         lastLogin: null,
-        user: null,
+        user: JSON.parse(localStorage.getItem('authUser')!),
       };
     }
   };
