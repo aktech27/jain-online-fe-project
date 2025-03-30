@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface NavbarItems {
   id: number;
   item: string;
@@ -44,3 +46,50 @@ export interface SectionHeadPropTypes {
   title: string;
   subtitle: string;
 }
+
+export type ModalType = 'LOGIN' | 'REGISTER' | null;
+
+export interface ModalContextStateTypes {
+  isModalOpen: boolean;
+  modalType: ModalType;
+  handleClose: () => void;
+  handleOpen: (type: ModalType) => void;
+}
+
+export interface AuthContextState {
+  isLoggedIn: boolean;
+  lastLogin: null | Date;
+  user: null | object;
+}
+
+export enum AuthContextTypes {
+  LOGIN = 'LOGIN',
+  REGISTER = 'REGISTER',
+  LOGOUT = 'LOGOUT',
+}
+export interface AuthContextAction {
+  type: AuthContextTypes;
+  payload?: null | object;
+}
+
+export interface IAuthContext {
+  authState: AuthContextState;
+  dispatch: React.Dispatch<AuthContextAction> | null;
+}
+
+export interface RegisterFormItems {
+  name: string;
+  dob: string;
+  email: string;
+  contact: string;
+  password: string;
+}
+
+export type RegisterFormErrors = RegisterFormItems;
+
+export interface LoginFormItems {
+  email: string;
+  password: string;
+}
+
+export type LoginFormErrors = LoginFormItems;

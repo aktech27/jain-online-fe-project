@@ -1,16 +1,22 @@
 import { Navbar, HeroSection, BookNow, Packages, Services, Gallery, About, Footer } from './components';
+import AuthContextProvider from './context/Providers/AuthContext';
+import ModalContextProvider from './context/Providers/ModalContext';
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <HeroSection />
-      <BookNow />
-      <Packages />
-      <Services />
-      <Gallery />
-      <About />
-      <Footer />
+      <AuthContextProvider>
+        <ModalContextProvider>
+          <Navbar />
+        </ModalContextProvider>
+        <HeroSection />
+        <BookNow />
+        <Packages />
+        <Services />
+        <Gallery />
+        <About />
+        <Footer />
+      </AuthContextProvider>
     </>
   );
 };
