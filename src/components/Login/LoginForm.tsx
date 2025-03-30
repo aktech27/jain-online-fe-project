@@ -1,10 +1,11 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import Logo from '../../assets/aktechtbg.webp';
-import { ModalContext } from '../../context';
-import { LoginFormErrors, LoginFormItems } from '../../types';
+import { AuthContext, ModalContext } from '../../context';
+import { AuthContextTypes, LoginFormErrors, LoginFormItems, RegisterFormItems } from '../../types';
 
 const LoginForm = () => {
-  const { handleOpen } = useContext(ModalContext);
+  const { handleOpen, handleClose } = useContext(ModalContext);
+  const { dispatch } = useContext(AuthContext);
   const defaultRegisterFormState: LoginFormItems = {
     email: '',
     password: '',
@@ -15,10 +16,34 @@ const LoginForm = () => {
   };
   const [formState, setFormState] = useState<LoginFormItems>(defaultRegisterFormState);
   const [formErrors, setFormErrors] = useState<LoginFormErrors>(defaultRegisterFormErrors);
+  const [usersAvailable, setUsersAvailable] = useState<RegisterFormItems[]>([]);
+
+  useEffect(() => {
+    const registeredUsers: RegisterFormItems[] = JSON.parse(localStorage.getItem('registeredUsers') || JSON.stringify([]));
+    setUsersAvailable(registeredUsers);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formState);
+    const isValid = Object.values(formErrors).every((value) => value == '');
+    if (isValid) {
+      if (!(usersAvailable?.length > 0)) {
+        window.alert('Invalid Username/Password. Please register if account not yet created');
+      }
+      const [user] = usersAvailable!.filter((user) => user.email == formState.email);
+      if (user && user.email == formState.email && user.password == formState.password) {
+        window.alert('Login Successfull.');
+        dispatch!({
+          type: AuthContextTypes.LOGIN,
+          payload: { user },
+        });
+        setFormState(defaultRegisterFormState);
+        setFormErrors(defaultRegisterFormErrors);
+        handleClose();
+      } else {
+        window.alert('Invalid Username/Password. Please register if account not yet created');
+      }
+    }
   };
 
   const handleFullFormValidation = () => {
@@ -61,7 +86,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto">
+    <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto w-[min(450px,90vw)]">
       <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
         <img className="w-8 h-8 mr-2" src={Logo} alt="logo" />
         AK Travels
@@ -101,21 +126,6 @@ const LoginForm = () => {
                 onChange={(e) => handleChange('password', e.target.value)}
               />
               <div className="absolute text-xs ml-2 text-red-600 h-[15px]">{formErrors.password}</div>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-start">
-                <div className="flex items-center h-5">
-                  <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded focus:ring-3 focus:ring-blue-300 bg-blue-500" />
-                </div>
-                <div className="ml-3 text-sm">
-                  <label htmlFor="remember" className="text-gray-500">
-                    Remember me
-                  </label>
-                </div>
-              </div>
-              <a href="#" className="text-sm font-medium text-blue-600 hover:underline">
-                Forgot password?
-              </a>
             </div>
             <button
               type="submit"

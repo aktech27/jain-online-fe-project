@@ -4,8 +4,10 @@ import { AuthContextAction, AuthContextState, AuthContextTypes } from '../../typ
 export default function AuthReducer(state: AuthContextState, action: AuthContextAction) {
   switch (action.type) {
     case AuthContextTypes.LOGIN:
+      console.log(action.payload);
       return {
         ...state,
+        user: action.payload?.user,
         isLoggedIn: true,
       };
     case AuthContextTypes.REGISTER:
